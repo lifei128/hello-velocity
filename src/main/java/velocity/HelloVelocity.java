@@ -1,14 +1,3 @@
-/*
- * Project: hello-velocity
- * 
- * File Created at 2016年5月10日
- * 
- * Copyright 2014 zhidier.com All right reserved. This software is the
- * confidential and proprietary information of zhidier.com ("Confidential
- * Information"). You shall not disclose such Confidential Information and shall
- * use it only in accordance with the terms of the license agreement you entered
- * into with zhidier.com .
- */
 package velocity;
 
 import java.io.StringWriter;
