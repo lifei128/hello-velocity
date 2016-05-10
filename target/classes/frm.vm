@@ -1,0 +1,14 @@
+##表单模板
+##@author fsjohnhuang
+##@version 1.0
+## 引入外部模板文件
+#parse('macro.vm')
+## 主逻辑
+<form action="$action">
+#foreach($input in $inputs)
+#input($input.title $input.id)
+#end
+#foreach($select in $selects)
+#select($select.title $select.id $select.items)
+#end
+</form>
