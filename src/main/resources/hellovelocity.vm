@@ -1,5 +1,6 @@
 #set( $iAmVariable = "good!" )
-Welcome ${name} to velocity.com
+Welcome $name to velocity.com
+你们都好么？$names
 today is ${date}.
 #foreach ($i in $list)
 ${i}

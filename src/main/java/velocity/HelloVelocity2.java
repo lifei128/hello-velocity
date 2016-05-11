@@ -9,15 +9,15 @@ import java.util.Properties;
 
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
+import org.apache.velocity.app.Velocity;
 import org.apache.velocity.app.VelocityEngine;
-import org.apache.velocity.runtime.RuntimeConstants;
 
 public class HelloVelocity2 {
 
     public static void main(String[] args) {
         // 初始化模板引擎
         Properties props = new Properties();
-        props.put(RuntimeConstants.FILE_RESOURCE_LOADER_PATH, "/Users/leexm/documents/workspace/hello-velocity/src/main/resources");
+        props.put(Velocity.FILE_RESOURCE_LOADER_PATH, "/Users/leexm/documents/workspace/hello-velocity/src/main/resources");
         VelocityEngine ve = new VelocityEngine(props);
         ve.init();
         // 配置引擎上下文对象

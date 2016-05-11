@@ -10,7 +10,6 @@ import java.util.Properties;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.Velocity;
-import org.apache.velocity.runtime.RuntimeConstants;
 
 /**
  * @type HelloVelocity
@@ -37,13 +36,19 @@ public class HelloVelocity {
 //        p.put("classpath.resource.loader.class", ClasspathResourceLoader.class.getName());
         
         //根据绝对路径加载，vm文件置于硬盘某分区中
-        p.put(RuntimeConstants.FILE_RESOURCE_LOADER_PATH, "/Users/leexm/documents/workspace/hello-velocity/src/main/resources");
+        p.put(Velocity.INPUT_ENCODING, "utf-8"); //解决乱码问题
+        p.put(Velocity.FILE_RESOURCE_LOADER_PATH, "/Users/leexm/documents/workspace/hello-velocity/src/main/resources");
         
         Velocity.init(p);
         Template template = Velocity.getTemplate("hellovelocity.vm");
         
         VelocityContext ctx = new VelocityContext();
         ctx.put("name", "比克大魔王");
+        
+        List<String> names = new ArrayList<String>();
+        names.add("Tom");
+        names.add("Helen");
+        ctx.put("names", names);
         
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         ctx.put("date", formatter.format(new Date()));
